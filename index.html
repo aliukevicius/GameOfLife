@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Of Life</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="actionWrapper">
+    <div class="action" id="run">Run</div>
+    <div class="action" id="stop">Stop</div>
+    <div class="clear"></div>
+</div>
+
+<script type="text/javascript" src="/gameOfLife.js"></script>
+<script type="text/javascript">
+
+    var worldSettings = {
+        rows: 33,
+        cols: 70,
+        lifeSize: 15,
+        lifeSpeed: 50,
+        initialState: {}
+    };
+
+    var world = new World('canvas', worldSettings);
+
+    document.getElementById("run").onclick = function() {
+        world.runWorld();
+    };
+
+    document.getElementById("stop").onclick = function() {
+        world.stopWorld();
+    };
+</script>
+</body>
+</html>
